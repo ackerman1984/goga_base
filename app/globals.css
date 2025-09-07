@@ -1,0 +1,396 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #111111;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #111111;
+    --foreground: #ffffff;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: "Geist", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 80%;
+}
+
+/* Mexican/Spanish Cultural Styling */
+
+/* Papel Picado Patterns */
+@keyframes papel-picado {
+  0%, 100% { transform: rotate(-2deg) translateY(0px); }
+  50% { transform: rotate(2deg) translateY(-5px); }
+}
+
+@keyframes float-cactus {
+  0%, 100% { transform: translateY(0px) rotate(-1deg); }
+  50% { transform: translateY(-8px) rotate(1deg); }
+}
+
+@keyframes pinata-swing {
+  0%, 100% { transform: rotate(-5deg); }
+  50% { transform: rotate(5deg); }
+}
+
+.papel-picado-card {
+  background: linear-gradient(135deg, 
+    #ff6b6b 0%, #ff8e8e 25%, 
+    #4ecdc4 25%, #4ecdc4 50%, 
+    #ffd93d 50%, #ffd93d 75%, 
+    #6bcf7f 75%, #6bcf7f 100%);
+  background-size: 20px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.papel-picado-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background: repeating-linear-gradient(
+    45deg,
+    #ff6b6b 0px, #ff6b6b 10px,
+    #4ecdc4 10px, #4ecdc4 20px,
+    #ffd93d 20px, #ffd93d 30px,
+    #6bcf7f 30px, #6bcf7f 40px
+  );
+  clip-path: polygon(0% 0%, 10% 100%, 20% 0%, 30% 100%, 40% 0%, 50% 100%, 60% 0%, 70% 100%, 80% 0%, 90% 100%, 100% 0%);
+}
+
+.papel-picado-border {
+  border: 3px solid;
+  border-image: repeating-linear-gradient(
+    45deg,
+    #ff6b6b 0px, #ff6b6b 10px,
+    #4ecdc4 10px, #4ecdc4 20px,
+    #ffd93d 20px, #ffd93d 30px,
+    #6bcf7f 30px, #6bcf7f 40px
+  ) 3;
+  animation: papel-picado 3s ease-in-out infinite;
+}
+
+.cactus-decoration {
+  position: relative;
+  animation: float-cactus 4s ease-in-out infinite;
+}
+
+.cactus-decoration::before {
+  content: '🌵';
+  position: absolute;
+  font-size: 1.5rem;
+  top: -10px;
+  right: -10px;
+  filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.2));
+}
+
+.pinata-decoration {
+  position: relative;
+  animation: pinata-swing 2s ease-in-out infinite;
+}
+
+.pinata-decoration::after {
+  content: '🪅';
+  position: absolute;
+  font-size: 1.2rem;
+  top: -8px;
+  right: -8px;
+  animation: pinata-swing 2.5s ease-in-out infinite reverse;
+}
+
+.mexican-pattern {
+  background-image: 
+    radial-gradient(circle at 25% 25%, #ff6b6b 2px, transparent 2px),
+    radial-gradient(circle at 75% 75%, #4ecdc4 2px, transparent 2px),
+    radial-gradient(circle at 75% 25%, #ffd93d 2px, transparent 2px),
+    radial-gradient(circle at 25% 75%, #6bcf7f 2px, transparent 2px);
+  background-size: 20px 20px;
+  background-position: 0 0, 0 0, 10px 10px, 10px 10px;
+}
+
+.fiesta-gradient {
+  background: linear-gradient(135deg, 
+    #ff6b6b 0%, #ff8e8e 20%, 
+    #4ecdc4 20%, #4ecdc4 40%, 
+    #ffd93d 40%, #ffd93d 60%, 
+    #6bcf7f 60%, #6bcf7f 80%, 
+    #ff6b6b 80%, #ff6b6b 100%);
+}
+
+.lucha-libre-mask {
+  background: linear-gradient(135deg, #ff6b6b 0%, #c44569 100%);
+  border-radius: 20px 20px 5px 5px;
+  position: relative;
+}
+
+.lucha-libre-mask::before {
+  content: '👺';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+  filter: hue-rotate(180deg);
+}
+
+/* Custom Mexican Colors */
+:root {
+  --mexican-red: #ff6b6b;
+  --mexican-green: #6bcf7f;
+  --mexican-yellow: #ffd93d;
+  --mexican-blue: #4ecdc4;
+  --mexican-orange: #ff8e53;
+  --mexican-pink: #fd79a8;
+}
+
+.mexican-card {
+  background: linear-gradient(145deg, 
+    var(--mexican-red) 0%, 
+    var(--mexican-orange) 100%);
+  border: 2px solid var(--mexican-yellow);
+  box-shadow: 
+    0 4px 15px rgba(255, 107, 107, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.aztec-pattern {
+  background-image: 
+    linear-gradient(45deg, transparent 25%, var(--mexican-yellow) 25%, var(--mexican-yellow) 50%, transparent 50%, transparent 75%, var(--mexican-blue) 75%),
+    linear-gradient(-45deg, transparent 25%, var(--mexican-green) 25%, var(--mexican-green) 50%, transparent 50%, transparent 75%, var(--mexican-red) 75%);
+  background-size: 16px 16px;
+  background-position: 0 0, 8px 8px;
+  opacity: 0.1;
+}
+
+/* Hover effects */
+.mexican-hover:hover {
+  transform: translateY(-3px) rotate(1deg);
+  box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3);
+  transition: all 0.3s ease;
+}
+
+.papel-picado-hover:hover {
+  animation: papel-picado 1s ease-in-out infinite;
+}
+
+/* Subtle Animations for GOGA App */
+
+/* Page transitions */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 53%, 80%, 100% {
+    transform: translate3d(0,0,0);
+  }
+  40%, 43% {
+    transform: translate3d(0, -15px, 0);
+  }
+  70% {
+    transform: translate3d(0, -7px, 0);
+  }
+  90% {
+    transform: translate3d(0, -3px, 0);
+  }
+}
+
+@keyframes wiggle {
+  0%, 7% {
+    transform: rotateZ(0);
+  }
+  15% {
+    transform: rotateZ(-15deg);
+  }
+  20% {
+    transform: rotateZ(10deg);
+  }
+  25% {
+    transform: rotateZ(-10deg);
+  }
+  30% {
+    transform: rotateZ(6deg);
+  }
+  35% {
+    transform: rotateZ(-4deg);
+  }
+  40%, 100% {
+    transform: rotateZ(0);
+  }
+}
+
+/* Animation classes */
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.animate-slide-in-left {
+  animation: slideInFromLeft 0.5s ease-out;
+}
+
+.animate-slide-in-right {
+  animation: slideInFromRight 0.5s ease-out;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.4s ease-out;
+}
+
+.animate-bounce-in {
+  animation: bounce 1s ease-in-out;
+}
+
+.animate-wiggle:hover {
+  animation: wiggle 0.8s ease-in-out;
+}
+
+/* Mascot specific animations */
+.mascot-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.mascot-hover:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+/* Logo animations */
+.logo-bounce:hover {
+  animation: bounce 0.6s ease-in-out;
+}
+
+/* Smooth transitions for all interactive elements */
+.smooth-transition {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Card hover effects */
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.15);
+  transition: all 0.3s ease;
+}
+
+/* Clean card styling */
+.clean-card {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(59, 130, 246, 0.1);
+  box-shadow: 0 2px 10px rgba(59, 130, 246, 0.05);
+}
+
+@media (prefers-color-scheme: dark) {
+  .clean-card {
+    background: rgba(17, 24, 39, 0.8);
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    box-shadow: 0 2px 10px rgba(99, 102, 241, 0.1);
+  }
+  
+  .card-hover:hover {
+    box-shadow: 0 8px 25px rgba(99, 102, 241, 0.2);
+  }
+}
+
+/* Mascot image styles - Remove white backgrounds */
+.mascot-image {
+  mix-blend-mode: multiply;
+  filter: contrast(1.1) saturate(1.2);
+  background: transparent;
+}
+
+/* Alternative method for removing white backgrounds */
+.mascot-no-bg {
+  filter: 
+    contrast(1.2) 
+    saturate(1.3) 
+    brightness(1.1)
+    drop-shadow(2px 2px 4px rgba(0,0,0,0.1));
+  mix-blend-mode: darken;
+  background: transparent;
+}
+
+/* For dark mode compatibility */
+@media (prefers-color-scheme: dark) {
+  .mascot-image, .mascot-no-bg {
+    mix-blend-mode: screen;
+    filter: 
+      contrast(1.1) 
+      saturate(1.2) 
+      brightness(0.95)
+      drop-shadow(2px 2px 4px rgba(255,255,255,0.1));
+  }
+}
