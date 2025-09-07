@@ -1,0 +1,14 @@
+{
+  "accountAssociation": {
+    "header": "eyJmaWQiOjQ0MSwidHlwZSI6ImN1c3RvZHkiLCJrZXkiOiIweGYwNDgzYzc4NDc5MDQ3NzJjNjQ2NzdhNGI4MTZlNTVhNGJhZmY5NzMifQ",
+    "payload": "eyJkb21haW4iOiJnb2dhLWJhc2UtZDhucXNydGUzdDlrbHJtZGd5eTZ2amsxeTZkei1sdWlzLWZlcm5hbmRvLnZlcmNlbC5hcHAifQ",
+    "signature": "0x5f7e9c8a4b2d1e3f6a8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a"
+  },
+  "frame": {
+    "name": "GOGA - Clases de Inglés",
+    "iconUrl": "https://via.placeholder.com/64x64",
+    "splashImageUrl": "https://via.placeholder.com/400x400",
+    "splashBackgroundColor": "#000000",
+    "homeUrl": "https://goga-base-d8nqsrte3t9klrmdgyy6vjk1y6dz-luis-fernando.vercel.app"
+  }
+}
